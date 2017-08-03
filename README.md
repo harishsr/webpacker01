@@ -6,3 +6,5 @@ This app is for:
 - trying new things
 - experimentation
 - breaking to find how things work
+
+Have fun!
