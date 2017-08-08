@@ -8,3 +8,18 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Vue from 'vue'
+import Navbar from './navbar.vue'
+import People from './people.vue'
+import TurbolinksAdapter from 'vue-turbolinks'
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+    // Always needed, on every page
+    const navbar = new Vue(Navbar).$mount('navbar')
+    // this is only needed on some pages
+    var peopleElement = document.getElementById('people')
+
+    if(peopleElement != null) {
+        const people = new Vue(People).$mount('people')
+    }
+})
